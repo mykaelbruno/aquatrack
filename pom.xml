@@ -1,114 +1,114 @@
-<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.google.com/search?q=http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"><modelVersion>4.0.0</modelVersion><groupId>com.aquatrack</groupId>
-    <artifactId>aquatrack</artifactId>
-    <version>1.0-SNAPSHOT</version>
+<?xml version="1.0" encoding="UTF-8"?><project xmlns="https://www.google.com/search?q=http://maven.apache.org/POM/4.0.0"xmlns:xsi="https://www.google.com/search?q=http://www.w3.org/2001/XMLSchema-instance"xsi:schemaLocation="https://www.google.com/search?q=http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"><modelVersion>4.0.0</modelVersion><groupId>com.aquatrack</groupId>
+<artifactId>aquatrack</artifactId>
+<version>1.0-SNAPSHOT</version>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
-    </properties>
+<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+</properties>
 
-    <dependencies>
-        <!-- Gson -->
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.10.1</version>
-        </dependency>
-        <!-- Jupiter -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.10.2</version>
-            <scope>test</scope>
-        </dependency>
-        <!-- Mockito -->
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>5.11.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mindrot</groupId>
-            <artifactId>jbcrypt</artifactId>
-            <version>0.4</version>
-        </dependency>
-        <dependency>
-            <groupId>io.javalin</groupId>
-            <artifactId>javalin</artifactId>
-            <version>6.7.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.javalin</groupId>
-            <artifactId>javalin-rendering</artifactId>
-            <version>6.1.6</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-slf4j2-impl</artifactId>
-            <version>2.23.1</version>
-        </dependency>
+<dependencies>
+    <!-- Gson -->
+    <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>2.10.1</version>
+    </dependency>
+    <!-- Jupiter -->
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter</artifactId>
+        <version>5.10.2</version>
+        <scope>test</scope>
+    </dependency>
+    <!-- Mockito -->
+    <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <version>5.11.0</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.mindrot</groupId>
+        <artifactId>jbcrypt</artifactId>
+        <version>0.4</version>
+    </dependency>
+    <dependency>
+        <groupId>io.javalin</groupId>
+        <artifactId>javalin</artifactId>
+        <version>6.7.0</version>
+    </dependency>
+    <dependency>
+        <groupId>io.javalin</groupId>
+        <artifactId>javalin-rendering</artifactId>
+        <version>6.1.6</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-slf4j2-impl</artifactId>
+        <version>2.23.1</version>
+    </dependency>
 
-        <dependency>
-            <groupId>org.thymeleaf</groupId>
-            <artifactId>thymeleaf</artifactId>
-            <version>3.1.2.RELEASE</version>
-        </dependency>
+    <dependency>
+        <groupId>org.thymeleaf</groupId>
+        <artifactId>thymeleaf</artifactId>
+        <version>3.1.2.RELEASE</version>
+    </dependency>
 
-        <dependency>
-            <groupId>com.github.librepdf</groupId>
-            <artifactId>openpdf</artifactId>
-            <version>1.3.39</version>
-        </dependency>
-    </dependencies>
+    <dependency>
+        <groupId>com.github.librepdf</groupId>
+        <artifactId>openpdf</artifactId>
+        <version>1.3.39</version>
+    </dependency>
+</dependencies>
 
-    <build>
-        <plugins>
-            <!-- Plugin Surefire para testes -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version>
-                <configuration>
-                    <!-- Permite o carregamento dinâmico do agent e libera modo experimental do Byte Buddy no Java 21+ -->
-                    <argLine>-XX:+EnableDynamicAgentLoading -Dnet.bytebuddy.experimental=true</argLine>
-                    <!-- Evita problemas de classpath/modulepath no JDK 21+ -->
-                    <useModulePath>false</useModulePath>
-                </configuration>
-            </plugin>
+<build>
+    <plugins>
+        <!-- Plugin Surefire para testes -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.2.5</version>
+            <configuration>
+                <!-- Permite o carregamento dinâmico do agent e libera modo experimental do Byte Buddy no Java 21+ -->
+                <argLine>-XX:+EnableDynamicAgentLoading -Dnet.bytebuddy.experimental=true</argLine>
+                <!-- Evita problemas de classpath/modulepath no JDK 21+ -->
+                <useModulePath>false</useModulePath>
+            </configuration>
+        </plugin>
+        
+        <!-- Plugin Shade para criar o "uber-jar" (JAR com dependências) -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-shade-plugin</artifactId>
+            <version>3.5.0</version>
+            <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>shade</goal>
+                    </goals>
+                    <configuration>
+                        <transformers>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                <!-- CLASSE PRINCIPAL CORRIGIDA para o pacote 'com.aquatrack' -->
+                                <mainClass>com.aquatrack.App</mainClass>
+                            </transformer>
+                        </transformers>
+                        <!-- Nome do JAR com dependências (para uso no Dockerfile) -->
+                        <finalName>${project.artifactId}-${project.version}-jar-with-dependencies</finalName>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
 
-            <!-- Plugin Shade para criar o "uber-jar" (JAR com dependências) -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.5.0</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <!-- CLASSE PRINCIPAL CORRIGIDA para o pacote 'com.aquatrack' -->
-                                    <mainClass>com.aquatrack.App</mainClass>
-                                </transformer>
-                            </transformers>
-                            <!-- Nome do JAR com dependências (para uso no Dockerfile) -->
-                            <finalName>${project.artifactId}-${project.version}-jar-with-dependencies</finalName>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-
-    <repositories>
-        <repository>
-            <id>central</id>
-            <url>https://repo.maven.apache.org/maven2</url>
-        </repository>
-    </repositories>
+<repositories>
+    <repository>
+        <id>central</id>
+        <url>https://repo.maven.apache.org/maven2</url>
+    </repository>
+</repositories>
 </project>
