@@ -1,11 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
-    <modelVersion>4.0.0</modelVersion>
-
-    <groupId>com.aquatrack</groupId>
+<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.google.com/search?q=http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"><modelVersion>4.0.0</modelVersion><groupId>com.aquatrack</groupId>
     <artifactId>aquatrack</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -72,20 +65,15 @@
 
     <build>
         <plugins>
-            <!-- Plugin Surefire para testes (mantido) -->
+            <!-- Plugin Surefire para testes -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
+                    <!-- Permite o carregamento dinâmico do agent e libera modo experimental do Byte Buddy no Java 21+ -->
                     <argLine>-XX:+EnableDynamicAgentLoading -Dnet.bytebuddy.experimental=true</argLine>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version>
-                <configuration>
+                    <!-- Evita problemas de classpath/modulepath no JDK 21+ -->
                     <useModulePath>false</useModulePath>
                 </configuration>
             </plugin>
@@ -104,7 +92,7 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <!-- CLASSE PRINCIPAL CORRIGIDA -->
+                                    <!-- CLASSE PRINCIPAL CORRIGIDA para o pacote 'com.aquatrack' -->
                                     <mainClass>com.aquatrack.App</mainClass>
                                 </transformer>
                             </transformers>
