@@ -1,11 +1,11 @@
-version: '3.8'
-
 services:
   aquatrack:
+    # O ponto indica que o Dockerfile está no diretório raiz da Stack.
     build: . 
     
     container_name: aquatrack_server
     
+    # Mapeamento de porta (Javalin interno 8000 -> Umbrel externo 8000)
     ports:
       - "8000:8000"
       
