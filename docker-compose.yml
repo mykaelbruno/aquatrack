@@ -2,20 +2,11 @@ version: '3.8'
 
 services:
   aquatrack:
-    # A instrução 'build: .' informa ao Docker para usar o Dockerfile
-    # no mesmo diretório para construir a imagem.
-    build: .
+    build: . 
     
     container_name: aquatrack_server
     
-    # Mapeia a porta 8000 (interna do Javalin) para a porta 8000 (externa do Umbrel/Host).
-    # IMPORTANTE: Verifique se a porta 8000 não está sendo usada por outro app no Umbrel.
     ports:
       - "8000:8000"
       
-    # Garante que o aplicativo reinicie automaticamente em caso de falha ou reinicialização do Dockge/Umbrel.
     restart: always
-    
-    # Opcional: Recomendado para garantir que o contêiner não crie 
-    # redes desnecessárias e use a rede padrão do Umbrel/Docker.
-    network_mode: bridge
